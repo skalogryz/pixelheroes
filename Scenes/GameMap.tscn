@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/GameMap.cs" type="Script" id=1]
+
+[node name="GameMap" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.08, 0.18, 0.12, 1 )
+
+[node name="Header" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_left = 24.0
+margin_top = 20.0
+margin_right = -24.0
+margin_bottom = 60.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="Header"]
+margin_right = 734.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "Adventure Map"
+
+[node name="TownButton" type="Button" parent="Header"]
+margin_left = 744.0
+margin_right = 874.0
+margin_bottom = 40.0
+text = "Town"
+
+[node name="BattleButton" type="Button" parent="Header"]
+margin_left = 884.0
+margin_right = 1014.0
+margin_bottom = 40.0
+text = "Battle"
+
+[node name="SettingsButton" type="Button" parent="Header"]
+margin_left = 1024.0
+margin_right = 1154.0
+margin_bottom = 40.0
+text = "Settings"
+
+[node name="MenuButton" type="Button" parent="Header"]
+margin_left = 1164.0
+margin_right = 1232.0
+margin_bottom = 40.0
+text = "Menu"
+
+[node name="MapPlaceholder" type="ColorRect" parent="."]
+anchor_left = 0.05
+anchor_top = 0.14
+anchor_right = 0.95
+anchor_bottom = 0.9
+color = Color( 0.17, 0.31, 0.19, 1 )
+
+[node name="Hint" type="Label" parent="MapPlaceholder"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -220.0
+margin_top = -18.0
+margin_right = 220.0
+margin_bottom = 18.0
+text = "Map placeholder: heroes, resources and castles will live here."
+align = 1
