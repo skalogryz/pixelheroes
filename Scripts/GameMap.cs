@@ -13,7 +13,7 @@ public class GameMap : Control
         GetNode<Button>("Header/SettingsButton").Connect("pressed", this, nameof(OpenSettings));
         GetNode<Button>("Header/MenuButton").Connect("pressed", this, nameof(OpenMenu));
 
-        adventureMap = SampleMapFactory.CreateStartingMap();
+        adventureMap = GameSession.TakeMapOrDefault();
         GetNode<Label>("Header/Title").Text = $"Adventure Map - {adventureMap.Name}";
         RenderAdventureMap();
     }
