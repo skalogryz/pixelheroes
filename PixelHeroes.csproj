@@ -5,6 +5,10 @@
     <AssemblyName>PixelHeroes</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="PixelHeroes.Core\**" />
+    <EmbeddedResource Remove="PixelHeroes.Core\**" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="PixelHeroes.Core\PixelHeroes.Core.csproj" />
   </ItemGroup>
 </Project>
