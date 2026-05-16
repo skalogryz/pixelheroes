@@ -4,4 +4,7 @@
     <RootNamespace>PixelHeroes</RootNamespace>
     <AssemblyName>PixelHeroes</AssemblyName>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="PixelHeroes.Core\PixelHeroes.Core.csproj" />
+  </ItemGroup>
 </Project>

@@ -55,16 +55,4 @@ anchor_left = 0.05
 anchor_top = 0.14
 anchor_right = 0.95
 anchor_bottom = 0.9
-color = Color( 0.17, 0.31, 0.19, 1 )
-
-[node name="Hint" type="Label" parent="MapPlaceholder"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -220.0
-margin_top = -18.0
-margin_right = 220.0
-margin_bottom = 18.0
-text = "Map placeholder: heroes, resources and castles will live here."
-align = 1
+color = Color( 0.055, 0.07, 0.055, 1 )

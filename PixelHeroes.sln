@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelHeroes", "PixelHeroes.csproj", "{2B519078-40DA-4DD4-8DEB-F3E3CB7A9112}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelHeroes.Core", "PixelHeroes.Core\PixelHeroes.Core.csproj", "{2F5B890E-B301-420D-845A-5A26DE9C4410}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{2B519078-40DA-4DD4-8DEB-F3E3CB7A9112}.Release|x64.Build.0 = Release|Any CPU
 		{2B519078-40DA-4DD4-8DEB-F3E3CB7A9112}.Release|x86.ActiveCfg = Release|Any CPU
 		{2B519078-40DA-4DD4-8DEB-F3E3CB7A9112}.Release|x86.Build.0 = Release|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Debug|x64.Build.0 = Debug|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Debug|x86.Build.0 = Debug|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|x64.ActiveCfg = Release|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|x64.Build.0 = Release|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|x86.ActiveCfg = Release|Any CPU
+		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
