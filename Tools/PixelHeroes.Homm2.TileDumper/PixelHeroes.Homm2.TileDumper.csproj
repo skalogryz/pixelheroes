@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>PixelHeroes.Homm2.TileDumper</RootNamespace>
+    <AssemblyName>PixelHeroes.Homm2.TileDumper</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PixelHeroes.Homm2\PixelHeroes.Homm2.csproj" />
+  </ItemGroup>
+</Project>
