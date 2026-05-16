@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelHeroes", "PixelHeroes.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelHeroes.Core", "PixelHeroes.Core\PixelHeroes.Core.csproj", "{2F5B890E-B301-420D-845A-5A26DE9C4410}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelHeroes.Homm2", "PixelHeroes.Homm2\PixelHeroes.Homm2.csproj", "{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|x64.Build.0 = Release|Any CPU
 		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|x86.ActiveCfg = Release|Any CPU
 		{2F5B890E-B301-420D-845A-5A26DE9C4410}.Release|x86.Build.0 = Release|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Debug|x64.Build.0 = Debug|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Debug|x86.Build.0 = Debug|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Release|x64.ActiveCfg = Release|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Release|x64.Build.0 = Release|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A61F16C5-7416-4DC1-927D-7C3C3FF3D40E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

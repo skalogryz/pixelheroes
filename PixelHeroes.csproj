@@ -9,6 +9,9 @@
     <EmbeddedResource Remove="PixelHeroes.Core\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove=".mono\**\*.cs" />
+    <Compile Remove="PixelHeroes.Core\**\*.cs" />
+    <Compile Remove="PixelHeroes.Homm2\**\*.cs" />
     <ProjectReference Include="PixelHeroes.Core\PixelHeroes.Core.csproj" />
   </ItemGroup>
 </Project>

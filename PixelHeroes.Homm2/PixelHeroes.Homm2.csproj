@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>PixelHeroes.Homm2</RootNamespace>
+    <AssemblyName>PixelHeroes.Homm2</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PixelHeroes.Core\PixelHeroes.Core.csproj" />
+  </ItemGroup>
+</Project>
