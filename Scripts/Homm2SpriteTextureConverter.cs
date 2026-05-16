@@ -77,6 +77,29 @@ public static class Homm2SpriteTextureConverter
         return ConvertResource(resource);
     }
 
+    public static Homm2GodotSpriteFrame CreateFlippedFrame(Homm2GodotSpriteFrame source, bool verticalFlip, bool horizontalFlip)
+    {
+        if (source == null)
+        {
+            throw new ArgumentNullException(nameof(source));
+        }
+
+        var image = source.Texture.GetData();
+        if (horizontalFlip)
+        {
+            image.FlipX();
+        }
+
+        if (verticalFlip)
+        {
+            image.FlipY();
+        }
+
+        var texture = new ImageTexture();
+        texture.CreateFromImage(image, 0);
+        return new Homm2GodotSpriteFrame(texture, source.Pivot, source.Center, source.Offset);
+    }
+
     public static Image ConvertFrameToImage(Homm2SpriteFrame frame, Homm2Palette palette)
     {
         if (frame == null)

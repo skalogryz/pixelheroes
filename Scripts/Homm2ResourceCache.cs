@@ -8,6 +8,7 @@ using IoPath = System.IO.Path;
 public static class Homm2ResourceCache
 {
     private static readonly Dictionary<string, Homm2GodotSpriteFrame> terrainTiles = new Dictionary<string, Homm2GodotSpriteFrame>();
+    private static readonly Dictionary<string, Homm2GodotSpriteFrame> transformedTerrainTiles = new Dictionary<string, Homm2GodotSpriteFrame>();
     private static bool terrainTilesLoaded;
     private static string loadedAggPath;
 
@@ -41,6 +42,7 @@ public static class Homm2ResourceCache
         var resource = new Homm2SpriteLoader().LoadTileSetFromAgg(aggPath);
         var frames = Homm2SpriteTextureConverter.ConvertResource(resource);
         terrainTiles.Clear();
+        transformedTerrainTiles.Clear();
 
         for (var i = 0; i < frames.Count; i++)
         {
@@ -60,7 +62,48 @@ public static class Homm2ResourceCache
             return false;
         }
 
-        return terrainTiles.TryGetValue(spriteKey, out frame);
+        if (!TryParseTerrainSpriteKey(spriteKey, out var index, out var verticalFlip, out var horizontalFlip))
+        {
+            return terrainTiles.TryGetValue(spriteKey, out frame);
+        }
+
+        if (!verticalFlip && !horizontalFlip)
+        {
+            return terrainTiles.TryGetValue(index, out frame);
+        }
+
+        if (transformedTerrainTiles.TryGetValue(spriteKey, out frame))
+        {
+            return true;
+        }
+
+        if (!terrainTiles.TryGetValue(index, out var baseFrame))
+        {
+            frame = null;
+            return false;
+        }
+
+        frame = Homm2SpriteTextureConverter.CreateFlippedFrame(baseFrame, verticalFlip, horizontalFlip);
+        transformedTerrainTiles[spriteKey] = frame;
+        return true;
+    }
+
+    private static bool TryParseTerrainSpriteKey(string spriteKey, out string index, out bool verticalFlip, out bool horizontalFlip)
+    {
+        index = null;
+        verticalFlip = false;
+        horizontalFlip = false;
+
+        var parts = spriteKey.Split(':');
+        if (parts.Length != 4 || parts[0] != "terrain")
+        {
+            return false;
+        }
+
+        index = parts[1];
+        verticalFlip = parts[2] == "v";
+        horizontalFlip = parts[3] == "h";
+        return true;
     }
 
     private static string FindHeroes2Agg(string mapPath)

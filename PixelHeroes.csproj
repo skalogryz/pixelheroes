@@ -5,8 +5,14 @@
     <AssemblyName>PixelHeroes</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove=".mono\**" />
+    <EmbeddedResource Remove=".mono\**" />
     <Compile Remove="PixelHeroes.Core\**" />
     <EmbeddedResource Remove="PixelHeroes.Core\**" />
+    <Compile Remove="PixelHeroes.Homm2\**" />
+    <EmbeddedResource Remove="PixelHeroes.Homm2\**" />
+    <Compile Remove="Tools\**" />
+    <EmbeddedResource Remove="Tools\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove=".mono\**\*.cs" />

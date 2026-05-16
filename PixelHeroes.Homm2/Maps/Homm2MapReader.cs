@@ -68,7 +68,7 @@ namespace PixelHeroes.Homm2.Maps
                     var tile = ReadTile(reader);
                     var position = new MapPosition(x, y);
                     var terrain = Homm2TerrainMapper.ToTerrainType(tile.TerrainImageIndex);
-                    map.SetTile(new MapTile(position, terrain, terrain != TerrainType.Water && terrain != TerrainType.Mountain, tile.TerrainImageIndex.ToString()));
+                    map.SetTile(new MapTile(position, terrain, terrain != TerrainType.Water && terrain != TerrainType.Mountain, CreateTerrainSpriteKey(tile)));
                     AddObject(map, position, tile);
                 }
             }
@@ -93,6 +93,13 @@ namespace PixelHeroes.Homm2.Maps
                 Level1ObjectUid = reader.ReadUInt32(),
                 Level2ObjectUid = reader.ReadUInt32()
             };
+        }
+
+        private static string CreateTerrainSpriteKey(Homm2TileRecord tile)
+        {
+            var verticalFlip = (tile.TerrainFlags & 1) != 0;
+            var horizontalFlip = (tile.TerrainFlags & 2) != 0;
+            return "terrain:" + tile.TerrainImageIndex + ":" + (verticalFlip ? "v" : "-") + ":" + (horizontalFlip ? "h" : "-");
         }
 
         private static void AddObject(AdventureMap map, MapPosition position, Homm2TileRecord tile)

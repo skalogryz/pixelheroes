@@ -6,4 +6,15 @@ When a HoMM2 map is selected, `MainMenu` reads the map first and then asks the c
 
 Only the first successful load creates textures. Later map loads reuse the already decoded `GROUND32.TIL` textures and do not read `HEROES2.AGG` again.
 
-`MapTile.Sprite` stores the HoMM2 `TerrainImageIndex` as a string. The map renderer uses that string to find the corresponding terrain texture by index. If resources are missing, rendering falls back to colored terrain cells.
+`MapTile.Sprite` stores the HoMM2 `TerrainImageIndex` and terrain flip flags as a string:
+
+```text
+terrain:<TerrainImageIndex>:<v|->:<h|->
+```
+
+HoMM2 terrain flags are interpreted as:
+
+- bit `1`: vertical flip.
+- bit `2`: horizontal flip.
+
+The renderer uses the index to find the base `GROUND32.TIL` texture and lazily creates flipped texture variants only when a map tile asks for them. If resources are missing, rendering falls back to colored terrain cells.
