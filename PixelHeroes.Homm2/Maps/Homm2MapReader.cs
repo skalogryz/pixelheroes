@@ -68,9 +68,7 @@ namespace PixelHeroes.Homm2.Maps
                     var tile = ReadTile(reader);
                     var position = new MapPosition(x, y);
                     var terrain = Homm2TerrainMapper.ToTerrainType(tile.TerrainImageIndex);
-                    var tl = new MapTile(position, terrain, terrain != TerrainType.Water && terrain != TerrainType.Mountain);
-                    tl.Sprite = tile.TerrainImageIndex.ToString();
-                    map.SetTile(tl);
+                    map.SetTile(new MapTile(position, terrain, terrain != TerrainType.Water && terrain != TerrainType.Mountain, tile.TerrainImageIndex.ToString()));
                     AddObject(map, position, tile);
                 }
             }

@@ -7,11 +7,13 @@ Supported resource formats:
 - `HEROES2.AGG` archive entries.
 - `KB.PAL` palette files.
 - `*.ICN` sprite files with normal and monochrome RLE frames.
+- `*.TIL` tile sets such as `GROUND32.TIL`, used by adventure-map terrain.
 
 Public entry point:
 
 - `Homm2SpriteLoader.LoadFromAgg(aggPath, icnName, paletteName = "KB.PAL")`
 - `Homm2SpriteLoader.LoadFromFiles(icnPath, palettePath)`
+- `Homm2SpriteLoader.LoadTileSetFromAgg(aggPath, tilName = "GROUND32.TIL", paletteName = "KB.PAL")`
 
 Decoded frame data:
 

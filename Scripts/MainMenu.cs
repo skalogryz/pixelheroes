@@ -46,6 +46,7 @@ public class MainMenu : Control
 		try
 		{
 			var map = new Homm2MapReader().Read(path);
+			Homm2ResourceCache.LoadForMap(path);
 			GameSession.UseMap(map);
 			OpenGameMap();
 		}

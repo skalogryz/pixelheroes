@@ -147,11 +147,24 @@ public class GameMap : Control
 
 	private Control CreateTileCell(MapTile tile)
 	{
-		var cell = new ColorRect
+		Control cell;
+		if (Homm2ResourceCache.TryGetTerrainTile(tile.Sprite, out var spriteFrame))
 		{
-			RectMinSize = new Vector2(TileSize, TileSize),
-			Color = GetTerrainColor(tile.Terrain)
-		};
+			cell = new TextureRect
+			{
+				Texture = spriteFrame.Texture,
+				RectMinSize = new Vector2(TileSize, TileSize),
+				StretchMode = TextureRect.StretchModeEnum.Scale
+			};
+		}
+		else
+		{
+			cell = new ColorRect
+			{
+				RectMinSize = new Vector2(TileSize, TileSize),
+				Color = GetTerrainColor(tile.Terrain)
+			};
+		}
 
 		var label = new Label
 		{

@@ -40,7 +40,7 @@ namespace PixelHeroes.Core.World
                         terrain = TerrainType.Dirt;
                     }
 
-                    map.SetTile(new MapTile(new MapPosition(x, y), terrain, passable));
+                    map.SetTile(new MapTile(new MapPosition(x, y), terrain, passable, GetSampleSpriteKey(terrain, x, y)));
                 }
             }
 
@@ -63,6 +63,27 @@ namespace PixelHeroes.Core.World
             map.AddUnit(new MapUnit("dwarves_01", "Dwarves", "Neutral", 10, new MapPosition(25, 16)));
 
             return map;
+        }
+
+        private static string GetSampleSpriteKey(TerrainType terrain, int x, int y)
+        {
+            switch (terrain)
+            {
+                case TerrainType.Grass:
+                    return ((x + y) % 16).ToString();
+                case TerrainType.Water:
+                    return (32 + (x + y) % 16).ToString();
+                case TerrainType.Dirt:
+                    return (64 + (x + y) % 16).ToString();
+                case TerrainType.Forest:
+                    return (96 + (x + y) % 16).ToString();
+                case TerrainType.Mountain:
+                    return (128 + (x + y) % 16).ToString();
+                case TerrainType.Road:
+                    return (160 + (x + y) % 16).ToString();
+                default:
+                    return "0";
+            }
         }
     }
 }

@@ -27,6 +27,21 @@ namespace PixelHeroes.Homm2.Sprites
             }
         }
 
+        public Homm2SpriteResource LoadTileSetFromAgg(string aggPath, string tilName = "GROUND32.TIL", string paletteName = "KB.PAL")
+        {
+            var archive = Homm2AggArchive.Open(aggPath);
+            var tilBytes = archive.ReadBytes(NormalizeResourceName(tilName, ".TIL"));
+            var paletteBytes = archive.ReadBytes(NormalizeResourceName(paletteName, ".PAL"));
+
+            using (var tilStream = new MemoryStream(tilBytes))
+            using (var paletteStream = new MemoryStream(paletteBytes))
+            {
+                var spriteSet = new Homm2TilReader().Read(tilStream, tilName);
+                var palette = new Homm2PaletteReader().Read(paletteStream);
+                return new Homm2SpriteResource(spriteSet, palette);
+            }
+        }
+
         private static string NormalizeResourceName(string name, string extension)
         {
             if (Path.HasExtension(name))

@@ -2,11 +2,12 @@ namespace PixelHeroes.Core.World
 {
     public sealed class MapTile
     {
-        public MapTile(MapPosition position, TerrainType terrain, bool isPassable = true)
+        public MapTile(MapPosition position, TerrainType terrain, bool isPassable = true, string sprite = "")
         {
             Position = position;
             Terrain = terrain;
             IsPassable = isPassable;
+            Sprite = sprite ?? "";
         }
 
         // The map creator specific sprite name, to distringuish from the TerrainType.
@@ -14,7 +15,7 @@ namespace PixelHeroes.Core.World
         //
         // Note: Sprite isn't necessary a static image, it could be an animation as well
         // or just a reference to a certain drawer.
-        public string Sprite { get; set; } = "";
+        public string Sprite { get; set; }
 
         public MapPosition Position { get; }
         public TerrainType Terrain { get; set; }
