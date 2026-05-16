@@ -13,5 +13,6 @@
     <Compile Remove="PixelHeroes.Core\**\*.cs" />
     <Compile Remove="PixelHeroes.Homm2\**\*.cs" />
     <ProjectReference Include="PixelHeroes.Core\PixelHeroes.Core.csproj" />
+    <ProjectReference Include="PixelHeroes.Homm2\PixelHeroes.Homm2.csproj" />
   </ItemGroup>
 </Project>
